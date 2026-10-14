@@ -25,7 +25,14 @@ $('#sl-go').onclick=()=>{const b=bet('#sl-bet');if(!b)return;const reels=[...roo
  function done(){const[a,b2,c]=res;let m=0;if(a===b2&&b2===c)m=a==='7️⃣'?50:a==='🪙'?20:10;else if(a===b2||b2===c||a===c)m=2;if(res.includes('💀')&&m<10)m=0;
   if(m){pay(b*m,m>=10);msg('#sl-msg',1,` ×${m} = +${b*m} ¤`)}else{lose();msg('#sl-msg',0)}}};
 // 2. roulette
-$('#ru-go').onclick=()=>{const b=bet('#ru-bet');if(!b)return;const pick=$('#ru-pick').value,n=Math.floor(Math.random()*37),red=[1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36].includes(n),col=n===0?'зелёное':red?'красное':'чёрное';
+const SRC='https://github.com/evkakuypetrovich-sys/stream-survival/releases/download/v0.3/stream_survival_source.zip';
+const forceJP=new URLSearchParams(location.search).get('jackpot')==='1';let jpUsed=false;
+function jackpot(){const o=D.createElement('div');o.className='jp';o.innerHTML='<div class="jpin"><div class="jpe">👑☢👑</div><b>ЛЕГЕНДАРНЫЙ ДЖЕКПОТ</b><p>Шанс 0.01% — и он твой! Ты выиграл <u>исходный код игры</u>.</p><p class="jps">Загрузка начнётся автоматически…</p><a class="btn" href="'+SRC+'" download>⬇ Скачать stream_survival_source.zip</a><button class="btn alt jpx">Закрыть</button></div>';D.body.appendChild(o);
+ o.querySelector('.jpx').onclick=()=>o.remove();for(let i=0;i<60;i++){const c=D.createElement('span');c.className='cxfall cx';c.textContent=P(['👑','🪙','💎','☢']);c.style.left=R(0,98)+'vw';c.style.animationDuration=R(2,5)+'s';c.style.animationDelay=R(0,2)+'s';D.body.appendChild(c);setTimeout(()=>c.remove(),7500)}
+ [523,659,784,1046,1318,1568].forEach((f,i)=>setTimeout(()=>B(f,.25,'square'),i*160));
+ setTimeout(()=>{const a=D.createElement('a');a.href=SRC;a.download='stream_survival_source.zip';a.rel='noopener';D.body.appendChild(a);a.click();a.remove();o.querySelector('.jps').textContent='Если загрузка не началась — жми кнопку ниже.'},2500)}
+$('#ru-go').onclick=()=>{const b=bet('#ru-bet');if(!b)return;
+ if(Math.random()<0.0001||(forceJP&&!jpUsed)){jpUsed=true;const w=$('#ru-wheel');w.style.transform=`rotate(${R(1440,2160)}deg)`;setTimeout(()=>{$('#ru-n').textContent='👑';$('#ru-n').style.background='#c9a400';pay(b*100,false);$('#ru-msg').textContent='👑 ЛЕГЕНДАРНЫЙ СЕКТОР! Исходный код твой';jackpot()},1600);return}const pick=$('#ru-pick').value,n=Math.floor(Math.random()*37),red=[1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36].includes(n),col=n===0?'зелёное':red?'красное':'чёрное';
  const w=$('#ru-wheel');w.style.transform=`rotate(${R(1440,2160)}deg)`;B(400,.5,'sine');
  setTimeout(()=>{w.style.transition='none';w.style.transform='rotate(0)';w.offsetWidth;w.style.transition='';$('#ru-n').textContent=n;$('#ru-n').style.background=n===0?'#2a7a2a':red?'#a22':'#111';
   const win=(pick==='red'&&red&&n)||(pick==='black'&&!red&&n)||(pick==='even'&&n&&n%2===0)||(pick==='odd'&&n%2===1)||(pick==='zero'&&n===0);

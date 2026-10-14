@@ -111,3 +111,7 @@ body.t-paper .hero .sub,body.t-brainrot .hero .sub{color:#fff}
 .cboard{text-align:left;padding-left:0;list-style:none;margin:0}.cboard li{display:flex;justify-content:space-between;padding:4px 6px;border-bottom:1px solid var(--edge);font-size:15px}.cboard li.me{background:var(--rust);color:#fff}
 .cbig{position:fixed;inset:0;z-index:9800;display:flex;align-items:center;justify-content:center;pointer-events:none}.cbig b{font:900 clamp(30px,8vw,100px)/1.1 Impact,sans-serif;color:#e8d24a;text-align:center;-webkit-text-stroke:2px #000;text-shadow:5px 5px 0 #000;animation:cxin .6s cubic-bezier(.2,1.6,.4,1)}
 [hidden]{display:none!important}
+.jpodds{font-size:13px;color:#e8d24a}
+.jp{position:fixed;inset:0;z-index:9900;background:radial-gradient(circle,rgba(120,90,0,.9),rgba(0,0,0,.97));display:flex;align-items:center;justify-content:center;animation:cxin .7s}
+.jpin{text-align:center;max-width:560px;padding:20px}.jpe{font-size:70px;animation:wob .6s infinite}.jpin b{display:block;font:900 clamp(30px,8vw,80px)/1.05 Impact,sans-serif;color:#ffd700;-webkit-text-stroke:2px #000;text-shadow:0 0 30px #ffd700,5px 5px 0 #000;animation:wob 1s infinite}
+.jpin p{color:#fff;font-size:18px}.jpin .btn{margin:6px}
