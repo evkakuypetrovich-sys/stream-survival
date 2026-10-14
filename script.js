@@ -11,7 +11,7 @@ const io=new IntersectionObserver(es=>es.forEach(en=>{if(!en.isIntersecting)retu
 const st=t=>{t0??=t;const p=Math.min((t-t0)/1500,1);b.textContent=Math.floor(to*p).toLocaleString('ru-RU')+suf;if(p<1)requestAnimationFrame(st)};requestAnimationFrame(st);io.unobserve(b)}));
 $$('.stat b').forEach(b=>io.observe(b));
 // PDA ticker
-const news=['Зомби подал жалобу на стримера за неуважительный бег','Чат скинулся на !storm, стример скинулся на нервы','Житель xX_Petya_Xx построил сарай вместо вышки и гордится','Прораб снова сказал «█████» — стройка ускорилась на 3%','Машина заспавнилась в озере. Машина довольна','Призрак ищет друзей. Друзья выключили свет','Радиация в пустоши: «норм», по мнению чата','Курс монет чата: 1 !zombie = 1 испорченный вечер','Сундук найден. Внутри палка. Палка не отдаётся'];
+const news=['Зомби подал жалобу на стримера за неуважительный бег','Чат скинулся на !storm, стример скинулся на нервы','Житель xX_Petya_Xx построил сарай вместо вышки и гордится','Прораб снова сказал «█████» — стройка ускорилась на 3%','Машина заспавнилась в озере. Машина довольна','Призрак ищет друзей. Друзья выключили свет','Радиация в пустоши: «норм», по мнению чата','Курс монет чата: 1 !zombie = 1 испорченный вечер','Сундук найден. Внутри палка. Палка не отдаётся','Зритель спросил «можно !night днём?» — можно. А зачем?','Курс черемши вырос на 67%','Прораб объявлен главным воздуханом месяца'];
 $('#tick').textContent='КПК ☢ '+news.join('   ///   ');
 // radiation meter
 setInterval(()=>{const v=Math.floor(20+Math.random()*80);$('#radfill').style.width=v+'%';$('#radval').textContent=v+' мкР/ч · '+(v>80?'АЙ':'норм')},1200);
@@ -43,5 +43,5 @@ let last=0;if(matchMedia('(pointer:fine)').matches)document.addEventListener('mo
 document.addEventListener('click',e=>{if(e.target.closest('a,button,select,img'))beep(520,.05)});
 let buf='';document.addEventListener('keydown',e=>{if(e.key.length!==1)return;buf=(buf+e.key.toLowerCase()).slice(-8);if(buf.endsWith('zombie')||buf.endsWith('зомби')){zrain();groan();toast('Кто-то написал !zombie 🧟')}});
 $('.hero h1').addEventListener('dblclick',()=>{document.body.classList.add('shake');bleep();toast('Прораб: «█████ ███!»');setTimeout(()=>document.body.classList.remove('shake'),1200)});
-const rand=['Чат купил !night. Сайт держится.','Житель взял задание и ушёл в отпуск','+1 аура за скролл','Ваш скролл засчитан как кардио','Зомби лайкнул ваш визит ❤️','Ошибка 404: выживание не найдено','Прораб: «кто трогал мой █████?»'];
+const rand=['Чат купил !night. Сайт держится.','Житель взял задание и ушёл в отпуск','+1 аура за скролл','Ваш скролл засчитан как кардио','Зомби лайкнул ваш визит ❤️','Ошибка 404: выживание не найдено','Прораб: «кто трогал мой █████?»','Можно. А зачем?','6-7 зомби уже в пути','Обнаружен воздухан: житель опять «идёт за инструментом»','Найдена черемша. Зачем — неизвестно','Бурмалда уровня: чат'];
 setInterval(()=>{if(document.hidden)return;toast(rand[Math.random()*rand.length|0]);beep(300,.08)},45000);
