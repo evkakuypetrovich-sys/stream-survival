@@ -11,6 +11,7 @@
 <body>
 <header class="nav">
   <a href="#top" class="logo">STREAM SURVIVAL</a>
+  <div class="tools"><select id="theme" aria-label="Тема"><option value="stalker">☢ Сталкер</option><option value="minecraft">⛏ Майнкрафт</option><option value="neon">💜 Неон</option><option value="brainrot">🧠 Брейнрот</option><option value="paper">📜 Бумажка</option></select><button id="snd" title="Звук">🔇</button></div>
   <nav><a href="#shots">Скриншоты</a><a href="#features">Фичи</a><a href="#commands">Команды</a><a href="#install">Установка</a><a href="#credits">Авторы</a></nav>
 </header>
 <div class="ticker"><span id="tick">КПК: ☢ Сводка хаоса загружается...</span></div>
@@ -22,7 +23,7 @@
   <p class="tag">Ты выживаешь. Чат мешает.</p>
   <p class="sub">3D-выживание для стримеров от 1-го и 3-го лица. Зрители Twitch насылают зомби, бури и ночь — или строят свой город.</p>
   <div class="btns">
-    <a class="btn runaway" id="runaway" href="https://github.com/evkakuypetrovich-sys/stream-survival/releases/latest">⬇ Скачать StreamSurvival.exe</a>
+    <a class="btn runaway" id="runaway" href="https://github.com/evkakuypetrovich-sys/stream-survival/releases/tag/v0.3">⬇ Скачать StreamSurvival.exe</a>
     <a class="btn alt" href="https://evkakuypetrovich-sys.github.io/chatburg/">Играть в Chatburg</a>
   </div>
 </section>
@@ -51,10 +52,12 @@
 <img src="assets/img/05_night.webp" alt="Ночь" loading="lazy">
 <img src="assets/img/06_inventory.webp" alt="Инвентарь" loading="lazy">
 <img src="assets/img/07_zombie_death.webp" alt="Зомби обиделось и упало" loading="lazy">
-<img src="assets/img/08_town_overview.webp" alt="Город зрителей" loading="lazy">
-<img src="assets/img/09_town_construction.webp" alt="Стройка: прораб матерится (запикано)" loading="lazy">
-<img src="assets/img/10_town_citizens.webp" alt="Жители с никами зрителей" loading="lazy">
-<img src="assets/img/12_dialog.webp" alt="Выдача задания жителю по E" loading="lazy">
+<img src="assets/img/08_town_overview.webp" alt="Город зрителей. Ипотека — 0%, монеты — 100%" loading="lazy">
+<img src="assets/img/09_town_construction.webp" alt="Стройка: прораб матерится (█████), дедлайн — вчера" loading="lazy">
+<img src="assets/img/10_town_citizens.webp" alt="Жители с никами чата. Работают за еду и лайки" loading="lazy">
+<img src="assets/img/12_dialog.webp" alt="Нажал E — выдал задание. Житель уже ищет отмазку" loading="lazy">
+<img src="assets/img/11_town_night.webp" alt="Ночь в городе: жители защищают дома (и свои ники)" loading="lazy">
+<img src="assets/img/13_task_progress.webp" alt="Прогресс задания 47%. Остальные 53% — перекур" loading="lazy">
 </div></section>
 
 <section id="features"><h2>// Возможности</h2>
@@ -90,6 +93,24 @@
 <p class="note">Без стрима команды можно проверить клавишами F1–F9.</p>
 </section>
 
+<section id="memes"><h2>// Мемы (сертифицированный брейнрот)</h2>
+<div class="memes">
+<div class="meme"><div class="mt">POV:</div><p>ты написал !zombie за 5 монет, а стример умер за 3 секунды</p><div class="mb">окупился 🗿</div></div>
+<div class="meme"><div class="mt">Стример:</div><p>«сейчас спокойно порыбачу»</p><div class="mb">Чат: !storm !night !darkness !zombie ×40</div></div>
+<div class="meme"><div class="mt">Я в 3 ночи:</div><p>«ещё одно задание жителю и спать»</p><div class="mb">житель строит сарай 6 часов</div></div>
+<div class="meme"><div class="mt">Зомби когда</div><p>стример переключился на 1-е лицо</p><div class="mb">«он меня не видит… он меня не видит…»</div></div>
+<div class="meme"><div class="mt">Никто:</div><p>Абсолютно никто:</p><div class="mb">Машина из !car: *спавнится в озере*</div></div>
+<div class="meme"><div class="mt">Мама:</div><p>«у нас дома есть город»</p><div class="mb">Город дома: 3 сарая и прораб █████</div></div>
+<div class="meme"><div class="mt">Скибиди-сталкер</div><p>сигма-выживание, радиация 999 аура</p><div class="mb">+1000 ауры за !heal</div></div>
+<div class="meme"><div class="mt">Это не баг,</div><p>это фича: зомби обиделся и ушёл</p><div class="mb">патч 0.0.1 — «так задумано»</div></div>
+</div>
+<div class="fakebtns">
+<button class="btn fake" data-msg="Монеты отправлены… в никуда 💸">Получить 1 000 000 монет</button>
+<button class="btn fake" data-msg="Чат выключить нельзя. Чат вечен.">Выключить чат</button>
+<button class="btn fake" data-msg="Удаление зомби… зомби удалил вас.">Удалить всех зомби</button>
+<button class="btn fake" data-msg="Ок. Сохранили. Наверное.">Сохранить игру (честно)</button>
+<button class="btn fake" id="dontpress" data-msg="Я ЖЕ ПРОСИЛ">НЕ НАЖИМАТЬ</button>
+</div></section>
 <section id="reviews"><h2>// Отзывы</h2>
 <div class="cards">
 <div class="card review"><h3>Зомби Гена ★★★★★</h3><p>«Меня призвали 14 раз за стрим. Ни разу не дали догнать. Стример бегает быстрее моей зарплаты. Рекомендую.»</p></div>
@@ -105,7 +126,7 @@
 <li>Запусти двойным кликом — ничего ставить не нужно.</li>
 <li>В меню введи название своего Twitch-канала и жми «Играть».</li>
 </ol>
-<a class="btn" href="https://github.com/evkakuypetrovich-sys/stream-survival/releases/latest">⬇ Скачать для Windows</a>
+<a class="btn" href="https://github.com/evkakuypetrovich-sys/stream-survival/releases/tag/v0.3">⬇ Скачать для Windows</a>
 </section>
 
 <section id="chatburg" class="promo"><h2>// Ещё от автора</h2>
@@ -122,9 +143,10 @@
 <li>Шрифты Press Start 2P и Pixelify Sans — SIL Open Font License (OFL)</li>
 </ul></section>
 </main>
-<footer>© Evkakuy228 2026 · Без трекеров и cookies · Ни один зомби не пострадал (все обиделись) · <small>Подсказка: ↑↑↓↓←→←→BA</small></footer>
+<footer>© Evkakuy228 2026 · Без трекеров и cookies · Ни один зомби не пострадал (все обиделись) · <small>Подсказки: ↑↑↓↓←→←→BA · напиши «zombie» · двойной клик по заголовку · 7 тапов по логотипу</small></footer>
 <div id="lightbox" hidden><button class="lbx" aria-label="Закрыть">✕</button><button class="lbp" aria-label="Назад">◀</button><img alt=""><p class="lbcap"></p><button class="lbn" aria-label="Вперёд">▶</button></div>
 <div id="popup" hidden><div class="pop"><h3 id="poph">⚠ ВНИМАНИЕ</h3><p id="popt"></p><button id="popok" class="btn">Я принимаю судьбу</button></div></div>
+<div id="toast" hidden></div>
 <div id="rain" aria-hidden="true"></div>
 <script src="script.js" defer></script>
 </body></html>

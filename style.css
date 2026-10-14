@@ -62,3 +62,20 @@ body{padding-bottom:34px}
 @keyframes fall{to{transform:translateY(115vh) rotate(720deg)}}
 @media(prefers-reduced-motion:reduce){.wobble,.ticker span,.pop{animation:none}}
 @media(max-width:640px){.rad{top:auto;bottom:44px;width:96px}}
+.tools{display:flex;gap:6px}.tools select,.tools button{background:var(--panel2);color:var(--text);border:2px solid var(--edge);font:12px "Pixelify";padding:4px 6px;cursor:pointer}
+.memes{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.meme{background:#000;border:3px solid var(--edge);padding:14px;text-align:center;font-family:Impact,"Arial Black",sans-serif;color:#fff;text-transform:uppercase;text-shadow:2px 2px 0 #000,-2px -2px 0 #000;transition:transform .2s}
+.meme:hover{transform:scale(1.05) rotate(-2deg)}.meme .mt{font-size:20px;color:#e8d24a}.meme p{font-size:17px;margin:12px 0}.meme .mb{font-size:14px;color:#ff8a3d}
+.fakebtns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+#toast{position:fixed;left:50%;top:70px;transform:translateX(-50%);z-index:70;background:#000;color:#e8d24a;border:3px solid var(--rust);padding:10px 16px;font:12px "PS2P";text-align:center}
+#toast[hidden]{display:none}
+.spark{position:fixed;pointer-events:none;z-index:80;font-size:16px;animation:spk .8s ease-out forwards}
+@keyframes spk{to{transform:translateY(-40px) scale(.3);opacity:0}}
+.shake{animation:shk .4s 3}@keyframes shk{25%{transform:translate(4px,-3px)}75%{transform:translate(-4px,3px)}}
+body.t-minecraft{--bg:#3b2a1a;--panel:#5a3e24;--panel2:#6b8e23;--edge:#2a1d10;--text:#fff;--muted:#e0d6c0;--rust:#5b8c2a;--rust2:#9bd34a;--green:#9bd34a}
+body.t-neon{--bg:#0a0014;--panel:#150028;--panel2:#24004a;--edge:#ff00e6;--text:#e0f7ff;--muted:#9ad;--rust:#ff00e6;--rust2:#00f0ff;--green:#39ff14}
+body.t-neon h1,body.t-neon h2{text-shadow:0 0 12px var(--rust2)}
+body.t-brainrot{--bg:#ff4fd8;--panel:#ffe600;--panel2:#00e5ff;--edge:#000;--text:#000;--muted:#222;--rust:#ff2a00;--rust2:#7a00ff;--green:#0a7a00}
+body.t-brainrot .meme,body.t-brainrot .card{animation:wob 1.2s infinite}body.t-brainrot .hero h1{animation:wob .8s infinite}
+body.t-paper{--bg:#f2ead3;--panel:#fffaf0;--panel2:#e6dcc0;--edge:#8b7a55;--text:#2b2416;--muted:#5a4f38;--rust:#a33;--rust2:#a33;--green:#2f5d2f}
+body.t-paper .hero .sub,body.t-brainrot .hero .sub{color:#fff}

@@ -28,3 +28,20 @@ const code=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight'
 document.addEventListener('keydown',e=>{k=(e.key===code[k]||e.key.toLowerCase()===code[k])?k+1:(e.key===code[0]?1:0);if(k===code.length){k=0;zrain()}});
 let taps=0;$('.logo').addEventListener('click',e=>{if(++taps>=7){taps=0;zrain()}});
 function zrain(){const r=$('#rain');for(let i=0;i<60;i++){const d=document.createElement('span');d.className='drop';d.textContent=['🧟','🧟‍♂️','👻','🧟‍♀️'][i%4];d.style.left=Math.random()*100+'vw';d.style.animationDuration=2+Math.random()*3+'s';d.style.animationDelay=Math.random()*2+'s';r.appendChild(d);setTimeout(()=>d.remove(),7500)}}
+// themes
+const th=$('#theme'),setT=t=>{document.body.className=document.body.className.replace(/\bt-\S+/g,'').trim();document.body.classList.add('t-'+t);localStorage.setItem('ss-theme',t);th.value=t};
+setT(localStorage.getItem('ss-theme')||'stalker');th.onchange=()=>{setT(th.value);beep(660,.1);toast('Тема: '+th.options[th.selectedIndex].text)};
+// sounds (WebAudio, off by default)
+let ac=null,sndOn=localStorage.getItem('ss-snd')==='1';const sb=$('#snd');sb.textContent=sndOn?'🔊':'🔇';
+sb.onclick=()=>{sndOn=!sndOn;localStorage.setItem('ss-snd',sndOn?'1':'0');sb.textContent=sndOn?'🔊':'🔇';beep(880,.1)};
+function beep(f=440,d=.12,type='square'){if(!sndOn)return;ac??=new (window.AudioContext||window.webkitAudioContext)();const o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.value=f;g.gain.setValueAtTime(.08,ac.currentTime);g.gain.exponentialRampToValueAtTime(.001,ac.currentTime+d);o.connect(g).connect(ac.destination);o.start();o.stop(ac.currentTime+d)}
+const bleep=()=>beep(1000,.35,'sine'),groan=()=>{beep(110,.5,'sawtooth');setTimeout(()=>beep(80,.6,'sawtooth'),200)};
+let tt;function toast(m){const t=$('#toast');t.textContent=m;t.hidden=false;clearTimeout(tt);tt=setTimeout(()=>t.hidden=true,2200)}
+let dp=0;$$('.fake').forEach(b=>b.onclick=()=>{toast(b.dataset.msg);b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),1200);
+ if(b.id==='dontpress'){dp++;bleep();if(dp>=3){zrain();groan();toast('Ты сам этого хотел. 🧟')}}else beep(220,.15)});
+let last=0;if(matchMedia('(pointer:fine)').matches)document.addEventListener('mousemove',e=>{const n=performance.now();if(n-last<70)return;last=n;const s=document.createElement('span');s.className='spark';s.textContent=['☢','✦','🧟','💀','⛏','🪙'][Math.random()*6|0];s.style.left=e.clientX+'px';s.style.top=e.clientY+'px';document.body.appendChild(s);setTimeout(()=>s.remove(),800)});
+document.addEventListener('click',e=>{if(e.target.closest('a,button,select,img'))beep(520,.05)});
+let buf='';document.addEventListener('keydown',e=>{if(e.key.length!==1)return;buf=(buf+e.key.toLowerCase()).slice(-8);if(buf.endsWith('zombie')||buf.endsWith('зомби')){zrain();groan();toast('Кто-то написал !zombie 🧟')}});
+$('.hero h1').addEventListener('dblclick',()=>{document.body.classList.add('shake');bleep();toast('Прораб: «█████ ███!»');setTimeout(()=>document.body.classList.remove('shake'),1200)});
+const rand=['Чат купил !night. Сайт держится.','Житель взял задание и ушёл в отпуск','+1 аура за скролл','Ваш скролл засчитан как кардио','Зомби лайкнул ваш визит ❤️','Ошибка 404: выживание не найдено','Прораб: «кто трогал мой █████?»'];
+setInterval(()=>{if(document.hidden)return;toast(rand[Math.random()*rand.length|0]);beep(300,.08)},45000);
