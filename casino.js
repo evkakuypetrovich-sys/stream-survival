@@ -25,7 +25,7 @@ $('#sl-go').onclick=()=>{const b=bet('#sl-bet');if(!b)return;const reels=[...roo
  function done(){const[a,b2,c]=res;let m=0;if(a===b2&&b2===c)m=a==='7️⃣'?50:a==='🪙'?20:10;else if(a===b2||b2===c||a===c)m=2;if(res.includes('💀')&&m<10)m=0;
   if(m){pay(b*m,m>=10);msg('#sl-msg',1,` ×${m} = +${b*m} ¤`)}else{lose();msg('#sl-msg',0)}}};
 // 2. roulette
-const SRC='https://github.com/evkakuypetrovich-sys/stream-survival/releases/download/v0.3/stream_survival_source.zip';
+const SRC='https://github.com/evkakuypetrovich-sys/stream-survival/releases/download/v0.4/stream_survival_source.zip';
 const forceJP=new URLSearchParams(location.search).get('jackpot')==='1';let jpUsed=false;
 function jackpot(){const o=D.createElement('div');o.className='jp';o.innerHTML='<div class="jpin"><div class="jpe">👑☢👑</div><b>ЛЕГЕНДАРНЫЙ ДЖЕКПОТ</b><p>Шанс 0.01% — и он твой! Ты выиграл <u>исходный код игры</u>.</p><p class="jps">Загрузка начнётся автоматически…</p><a class="btn" href="'+SRC+'" download>⬇ Скачать stream_survival_source.zip</a><button class="btn alt jpx">Закрыть</button></div>';D.body.appendChild(o);
  o.querySelector('.jpx').onclick=()=>o.remove();for(let i=0;i<60;i++){const c=D.createElement('span');c.className='cxfall cx';c.textContent=P(['👑','🪙','💎','☢']);c.style.left=R(0,98)+'vw';c.style.animationDuration=R(2,5)+'s';c.style.animationDelay=R(0,2)+'s';D.body.appendChild(c);setTimeout(()=>c.remove(),7500)}
