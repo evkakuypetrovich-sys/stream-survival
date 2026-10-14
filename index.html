@@ -13,17 +13,35 @@
   <a href="#top" class="logo">STREAM SURVIVAL</a>
   <nav><a href="#shots">Скриншоты</a><a href="#features">Фичи</a><a href="#commands">Команды</a><a href="#install">Установка</a><a href="#credits">Авторы</a></nav>
 </header>
+<div class="ticker"><span id="tick">КПК: ☢ Сводка хаоса загружается...</span></div>
+<div class="rad" title="Радиация"><b>☢ РАД</b><div class="radbar"><i id="radfill"></i></div><span id="radval">0</span></div>
 <main id="top">
 <section class="hero" style="background-image:linear-gradient(rgba(15,18,10,.55),rgba(15,18,10,.95)),url(assets/img/02_third_person.webp)">
   <h1>STREAM<br>SURVIVAL</h1>
+  <div class="banner wobble">⚠ ЧАТ ПРОТИВ ТЕБЯ ⚠</div>
   <p class="tag">Ты выживаешь. Чат мешает.</p>
   <p class="sub">3D-выживание для стримеров от 1-го и 3-го лица. Зрители Twitch насылают зомби, бури и ночь — или строят свой город.</p>
   <div class="btns">
-    <a class="btn" href="https://github.com/evkakuypetrovich-sys/stream-survival/releases/latest">⬇ Скачать StreamSurvival.exe</a>
+    <a class="btn runaway" id="runaway" href="https://github.com/evkakuypetrovich-sys/stream-survival/releases/latest">⬇ Скачать StreamSurvival.exe</a>
     <a class="btn alt" href="https://evkakuypetrovich-sys.github.io/chatburg/">Играть в Chatburg</a>
   </div>
 </section>
 
+<section id="stats"><h2>// Официальная статистика (честно-честно)</h2>
+<div class="stats">
+<div class="stat wobble"><b data-to="9999999">0</b><span>зомби обиделось</span></div>
+<div class="stat"><b data-to="100" data-suf="%">0</b><span>чат виноват</span></div>
+<div class="stat wobble"><b data-to="4815162">0</b><span>раз прораб сказал «█████»</span></div>
+<div class="stat"><b data-to="0" data-suf=" шт">0</b><span>выживших стримеров</span></div>
+<div class="stat"><b data-to="777">0</b><span>машин уехало без водителя</span></div>
+<div class="stat wobble"><b data-to="3">0</b><span>секунды до следующего !zombie</span></div>
+</div></section>
+<section id="clips"><h2>// Живые кадры (ну почти)</h2>
+<div class="gallery clips">
+<img src="assets/img/clip_zombie.webp" alt="Зомби идёт обниматься" loading="lazy">
+<img src="assets/img/clip_night.webp" alt="Ночь. Фонарик. Паника." loading="lazy">
+<img src="assets/img/clip_town.webp" alt="Чат строит город (медленно)" loading="lazy">
+</div><p class="note">Анимированные превью из игровых скриншотов. Нормальное видео будет, когда стример выживет.</p></section>
 <section id="shots"><h2>// Скриншоты</h2>
 <div class="gallery">
 <img src="assets/img/01_menu.webp" alt="Главное меню" loading="lazy">
@@ -32,7 +50,11 @@
 <img src="assets/img/04_village.webp" alt="Деревня" loading="lazy">
 <img src="assets/img/05_night.webp" alt="Ночь" loading="lazy">
 <img src="assets/img/06_inventory.webp" alt="Инвентарь" loading="lazy">
-<img src="assets/img/07_zombie_death.webp" alt="Зомби" loading="lazy">
+<img src="assets/img/07_zombie_death.webp" alt="Зомби обиделось и упало" loading="lazy">
+<img src="assets/img/08_town_overview.webp" alt="Город зрителей" loading="lazy">
+<img src="assets/img/09_town_construction.webp" alt="Стройка: прораб матерится (запикано)" loading="lazy">
+<img src="assets/img/10_town_citizens.webp" alt="Жители с никами зрителей" loading="lazy">
+<img src="assets/img/12_dialog.webp" alt="Выдача задания жителю по E" loading="lazy">
 </div></section>
 
 <section id="features"><h2>// Возможности</h2>
@@ -68,6 +90,15 @@
 <p class="note">Без стрима команды можно проверить клавишами F1–F9.</p>
 </section>
 
+<section id="reviews"><h2>// Отзывы</h2>
+<div class="cards">
+<div class="card review"><h3>Зомби Гена ★★★★★</h3><p>«Меня призвали 14 раз за стрим. Ни разу не дали догнать. Стример бегает быстрее моей зарплаты. Рекомендую.»</p></div>
+<div class="card review"><h3>Призрак ☆☆☆☆☆</h3><p>«Включил !darkness, а стример включил фонарик. Я просто хотел поговорить. Ставлю ноль звёзд, их всё равно не видно.»</p></div>
+<div class="card review"><h3>Машина ★★★★☆</h3><p>«Меня заспавнили в озере через !car. Плаваю хорошо. Одна звезда снята за гудок, который я не нажимал.»</p></div>
+<div class="card review"><h3>Житель «xX_Petya_Xx» ★★★★★</h3><p>«Стример подошёл, нажал E и дал задание построить вышку. Построил сарай. Он сказал "█████". Лучший день в моей жизни.»</p></div>
+<div class="card review"><h3>Сундук с лутом ★★★☆☆</h3><p>«Внутри была одна палка. Это моя палка. Не трогайте.»</p></div>
+<div class="card review"><h3>Буря (!storm) ★★★★★</h3><p>«Меня вызвали за 50 монет. Сдула три дома и одну самооценку. Окупилась.»</p></div>
+</div></section>
 <section id="install"><h2>// Как установить</h2>
 <ol class="steps">
 <li>Скачай <b>StreamSurvival.exe</b> со страницы релизов.</li>
@@ -91,7 +122,9 @@
 <li>Шрифты Press Start 2P и Pixelify Sans — SIL Open Font License (OFL)</li>
 </ul></section>
 </main>
-<footer>© Evkakuy228 2026 · Без трекеров и cookies</footer>
-<div id="lightbox" hidden><img alt=""></div>
+<footer>© Evkakuy228 2026 · Без трекеров и cookies · Ни один зомби не пострадал (все обиделись) · <small>Подсказка: ↑↑↓↓←→←→BA</small></footer>
+<div id="lightbox" hidden><button class="lbx" aria-label="Закрыть">✕</button><button class="lbp" aria-label="Назад">◀</button><img alt=""><p class="lbcap"></p><button class="lbn" aria-label="Вперёд">▶</button></div>
+<div id="popup" hidden><div class="pop"><h3 id="poph">⚠ ВНИМАНИЕ</h3><p id="popt"></p><button id="popok" class="btn">Я принимаю судьбу</button></div></div>
+<div id="rain" aria-hidden="true"></div>
 <script src="script.js" defer></script>
 </body></html>

@@ -10,7 +10,7 @@ h1,h2,h3,.logo,.btn,th{font-family:"PS2P",monospace;font-weight:normal}
 .nav nav a{color:var(--text);text-decoration:none;margin-left:16px;font-size:16px}.nav nav a:hover{color:var(--rust2)}
 section{max-width:1100px;margin:0 auto;padding:60px 20px}
 h2{color:var(--green);font-size:18px;margin:0 0 28px}
-.hero{max-width:none;min-height:82vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background-size:cover;background-position:center;border-bottom:4px solid var(--rust)}
+.hero{max-width:none;min-height:min(82vh,760px);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background-size:cover;background-position:center;border-bottom:4px solid var(--rust)}
 .hero h1{font-size:clamp(32px,7vw,72px);line-height:1.2;margin:0;color:#e8e0c0;text-shadow:5px 5px 0 #000,0 0 30px rgba(181,86,42,.5)}
 .tag{font-family:"PS2P";color:var(--rust2);font-size:clamp(12px,2vw,18px);margin:24px 0 10px;text-shadow:2px 2px 0 #000}
 .sub{max-width:640px;color:var(--text)}
@@ -37,3 +37,28 @@ footer{text-align:center;padding:30px;border-top:3px solid var(--edge);color:var
 #lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);display:flex;align-items:center;justify-content:center;z-index:50;cursor:zoom-out}
 #lightbox[hidden]{display:none}#lightbox img{max-width:95vw;max-height:92vh;border:3px solid var(--rust)}
 @media(max-width:640px){.nav nav{display:none}section{padding:40px 16px}}
+
+.ticker{position:fixed;bottom:0;left:0;right:0;z-index:20;background:#0b0d07;border-top:3px solid var(--rust);color:#9fd36a;font:14px monospace;white-space:nowrap;overflow:hidden;padding:6px 0}
+.ticker span{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+@keyframes tick{to{transform:translateX(-100%)}}
+body{padding-bottom:34px}
+.rad{position:fixed;right:10px;top:60px;z-index:15;background:rgba(11,13,7,.9);border:3px solid var(--edge);padding:6px 8px;font:11px "PS2P";color:#e8d24a;width:120px;text-align:center}
+.radbar{height:10px;background:#000;margin:6px 0;border:1px solid var(--edge)}.radbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#7d9a3c,#e8d24a,#c33);transition:width .5s}
+.banner{display:inline-block;margin-top:20px;background:#c33;color:#fff;font:clamp(11px,2vw,16px) "PS2P";padding:10px 14px;border:3px solid #000;box-shadow:4px 4px 0 #000}
+.wobble{animation:wob 2.4s ease-in-out infinite}
+@keyframes wob{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg) scale(1.03)}}
+.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.stat{background:var(--panel);border:3px solid var(--edge);padding:18px;text-align:center}
+.stat b{display:block;font:clamp(18px,3vw,26px) "PS2P";color:var(--rust2);margin-bottom:10px}.stat span{color:var(--muted)}
+.review p{font-style:italic}.review:nth-child(odd){transform:rotate(-1deg)}.review:nth-child(even){transform:rotate(1deg)}
+.runaway{position:relative;transition:transform .25s}
+#lightbox{flex-direction:column}#lightbox button{position:absolute;background:var(--rust);color:#fff;border:3px solid #000;font:18px "PS2P";padding:10px 14px;cursor:pointer}
+.lbx{top:12px;right:12px}.lbp{left:10px;top:50%}.lbn{right:10px;top:50%}.lbcap{color:var(--text);margin:10px}
+#popup{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center}#popup[hidden]{display:none}
+.pop{background:var(--panel);border:4px solid var(--rust);max-width:380px;margin:16px;padding:20px;text-align:center;animation:wob .6s 3}
+.pop h3{font:13px "PS2P";color:#e8d24a}
+#rain{position:fixed;inset:0;pointer-events:none;z-index:40;overflow:hidden}
+.drop{position:absolute;top:-60px;font-size:40px;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(115vh) rotate(720deg)}}
+@media(prefers-reduced-motion:reduce){.wobble,.ticker span,.pop{animation:none}}
+@media(max-width:640px){.rad{top:auto;bottom:44px;width:96px}}
