@@ -12,7 +12,7 @@
 <header class="nav">
   <a href="#top" class="logo">STREAM SURVIVAL</a>
   <div class="tools"><select id="theme" aria-label="Тема"><option value="stalker">☢ Сталкер</option><option value="minecraft">⛏ Майнкрафт</option><option value="neon">💜 Неон</option><option value="brainrot">🧠 Брейнрот</option><option value="paper">📜 Бумажка</option></select><button id="snd" title="Звук">🔇</button></div>
-  <nav><a href="#shots">Скриншоты</a><a href="#features">Фичи</a><a href="#commands">Команды</a><a href="#install">Установка</a><a href="#credits">Авторы</a></nav>
+  <nav><a href="#shots">Скриншоты</a><a href="#features">Фичи</a><a href="#commands">Команды</a><a href="#install">Установка</a><a href="#casino">Казино</a><a href="#credits">Авторы</a></nav>
 </header>
 <div class="ticker"><span id="tick">КПК: ☢ Сводка хаоса загружается...</span></div>
 <div class="rad" title="Радиация"><b>☢ РАД</b><div class="radbar"><i id="radfill"></i></div><span id="radval">0</span></div>
@@ -124,6 +124,20 @@
 <button class="btn fake" data-msg="Ок. Сохранили. Наверное.">Сохранить игру (честно)</button>
 <button class="btn fake" id="dontpress" data-msg="Я ЖЕ ПРОСИЛ">НЕ НАЖИМАТЬ</button>
 </div></section>
+<section id="casino"><h2>// Казино «Зона» 🎰</h2>
+<div class="cnote">⚠ Виртуальные монеты ¤, не деньги. Купить, вывести или обменять их нельзя. Хранятся только в твоём браузере.</div>
+<div class="ctop"><div>Баланс: <b id="cbal">1000 ¤</b> <button class="btn alt" id="crefill" hidden>🎁 Бесплатная добавка +1000 ¤</button></div></div>
+<div class="cgrid">
+<div class="cg"><h3>🎰 Слоты</h3><div class="reels"><div class="reel">🧟</div><div class="reel">☢</div><div class="reel">🪙</div></div><div class="crow"><input id="sl-bet" type="number" value="50" min="1"><button class="btn" id="sl-go">Крутить</button></div><p class="cm" id="sl-msg">3 одинаковых ×10, 🪙🪙🪙 ×20, 7️⃣7️⃣7️⃣ ×50, пара ×2. 💀 портит всё.</p></div>
+<div class="cg"><h3>🎡 Рулетка</h3><div class="rwrap"><div id="ru-wheel" class="rwheel">☢</div><div id="ru-n" class="rn">?</div></div><div class="crow"><select id="ru-pick"><option value="red">Красное ×2</option><option value="black">Чёрное ×2</option><option value="even">Чёт ×2</option><option value="odd">Нечет ×2</option><option value="zero">Зеро ×36</option></select><input id="ru-bet" type="number" value="50" min="1"><button class="btn" id="ru-go">Ставка</button></div><p class="cm" id="ru-msg"></p></div>
+<div class="cg"><h3>🃏 Блэкджек</h3><p>Дилер-зомби: <b id="bj-d">—</b></p><p>Ты: <b id="bj-p">—</b></p><div class="crow"><input id="bj-bet" type="number" value="50" min="1"><button class="btn" id="bj-go">Раздать</button><button class="btn alt" id="bj-hit" disabled>Ещё</button><button class="btn alt" id="bj-stand" disabled>Хватит</button></div><p class="cm" id="bj-msg"></p></div>
+<div class="cg"><h3>🚀 Краш</h3><div class="crash"><span id="cr-rocket">🚀</span><b id="cr-m">×1.00</b></div><div class="crow"><input id="cr-bet" type="number" value="50" min="1"><button class="btn" id="cr-go">🚀 Запуск</button></div><p class="cm" id="cr-msg">Забери, пока ракета не взорвалась.</p></div>
+<div class="cg"><h3>🪙 Монетка</h3><div id="cf-coin" class="coin">🦅</div><div class="crow"><select id="cf-pick"><option value="orel">🦅 Орёл</option><option value="reshka">🧟 Зомби</option></select><input id="cf-bet" type="number" value="50" min="1"><button class="btn" id="cf-go">Бросить</button></div><p class="cm" id="cf-msg"></p></div>
+<div class="cg"><h3>💣 Мины (зомби)</h3><div id="mn-grid" class="mgrid"></div><div class="crow"><input id="mn-bet" type="number" value="50" min="1"><button class="btn" id="mn-go">Играть</button><button class="btn alt" id="mn-cash" disabled>Забрать</button></div><p class="cm" id="mn-msg">5 зомби на 25 клеток.</p></div>
+<div class="cg"><h3>🎯 Колесо фортуны</h3><div class="whwrap"><div class="whptr">▼</div><div id="wh-wheel" class="whw"></div></div><div class="crow"><input id="wh-bet" type="number" value="50" min="1"><button class="btn" id="wh-go">Крутить</button></div><p class="cm" id="wh-msg"></p></div>
+<div class="cg"><h3>🏆 Лидеры (фейковые зрители)</h3><ol id="cboard" class="cboard"></ol></div>
+</div></section>
+
 <section id="reviews"><h2>// Отзывы</h2>
 <div class="cards">
 <div class="card review"><h3>Зомби Гена ★★★★★</h3><p>«Меня призвали 14 раз за стрим. Ни разу не дали догнать. Стример бегает быстрее моей зарплаты. Рекомендую.»</p></div>
@@ -172,4 +186,6 @@
 <script src="assets/jokes.js" defer></script>
 <script src="script.js" defer></script>
 <script src="gags.js" defer></script>
+<script src="chaos.js" defer></script>
+<script src="casino.js" defer></script>
 </body></html>
