@@ -93,6 +93,12 @@
 <p class="note">Без стрима команды можно проверить клавишами F1–F9.</p>
 </section>
 
+<section id="gags"><h2>// 1000 приколов</h2>
+<div class="gagbox"><p id="gagtxt" class="gagtxt">Жми кнопку. Прораб уже █████.</p><p class="note" id="gagn">прикол 0 из 1000</p>
+<div class="fakebtns"><button class="btn" id="gagbtn">🎲 Случайный прикол</button><button class="btn" id="zbtn">🧟 Вызвать зомби</button><button class="btn alt" id="loadbtn">⚙ Загрузить ауру</button></div>
+<div class="lbar" hidden><i></i><span></span></div></div>
+<div class="chatfeed" aria-label="Фейковый чат"><div class="chead">ЧАТ (фейковый, но злой)</div><div id="feed"></div></div>
+</section>
 <section id="memes"><h2>// Мемы (сертифицированный брейнрот)</h2>
 <div class="memes">
 <div class="meme"><div class="mt">POV:</div><p>ты написал !zombie за 5 монет, а стример умер за 3 секунды</p><div class="mb">окупился 🗿</div></div>
@@ -157,10 +163,13 @@
 <li>Шрифты Press Start 2P и Pixelify Sans — SIL Open Font License (OFL)</li>
 </ul></section>
 </main>
+<div id="bottomgag" class="note" style="text-align:center;padding:20px">Ты долистал до конца. Чат это заметил. 👀</div>
 <footer>© Evkakuy228 2026 · Без трекеров и cookies · Ни один зомби не пострадал (все обиделись) · <small>Подсказки: ↑↑↓↓←→←→BA · напиши «zombie» · двойной клик по заголовку · 7 тапов по логотипу</small></footer>
 <div id="lightbox" hidden><button class="lbx" aria-label="Закрыть">✕</button><button class="lbp" aria-label="Назад">◀</button><img alt=""><p class="lbcap"></p><button class="lbn" aria-label="Вперёд">▶</button></div>
 <div id="popup" hidden><div class="pop"><h3 id="poph">⚠ ВНИМАНИЕ</h3><p id="popt"></p><button id="popok" class="btn">Я принимаю судьбу</button></div></div>
 <div id="toast" hidden></div>
 <div id="rain" aria-hidden="true"></div>
+<script src="assets/jokes.js" defer></script>
 <script src="script.js" defer></script>
+<script src="gags.js" defer></script>
 </body></html>

@@ -79,3 +79,15 @@ body.t-brainrot{--bg:#ff4fd8;--panel:#ffe600;--panel2:#00e5ff;--edge:#000;--text
 body.t-brainrot .meme,body.t-brainrot .card{animation:wob 1.2s infinite}body.t-brainrot .hero h1{animation:wob .8s infinite}
 body.t-paper{--bg:#f2ead3;--panel:#fffaf0;--panel2:#e6dcc0;--edge:#8b7a55;--text:#2b2416;--muted:#5a4f38;--rust:#a33;--rust2:#a33;--green:#2f5d2f}
 body.t-paper .hero .sub,body.t-brainrot .hero .sub{color:#fff}
+
+.gagbox{background:var(--panel);border:3px solid var(--edge);padding:18px;text-align:center}
+.gagtxt{font:clamp(13px,2vw,16px)/1.7 "PS2P";color:var(--rust2);min-height:3.4em}
+.lbar{position:relative;height:22px;background:#000;border:2px solid var(--edge);margin-top:14px}.lbar i{display:block;height:100%;width:0;background:repeating-linear-gradient(45deg,var(--green) 0 10px,var(--rust) 10px 20px)}
+.lbar span{position:absolute;inset:0;font:10px/22px "PS2P";color:#fff}
+.chatfeed{margin-top:16px;background:#0b0d07;border:3px solid var(--edge);height:220px;overflow:hidden;display:flex;flex-direction:column}
+.chead{font:10px "PS2P";padding:8px;background:var(--panel2);color:var(--green)}
+#feed{flex:1;overflow:hidden;padding:6px 10px;font:15px monospace;color:#cfc;display:flex;flex-direction:column;justify-content:flex-end}
+#feed div{animation:fin .3s}#feed b{color:var(--rust2)}@keyframes fin{from{opacity:0;transform:translateY(8px)}}
+.zwalk{position:fixed;bottom:40px;left:-60px;font-size:48px;z-index:45;animation:zw 6s linear forwards;cursor:pointer}@keyframes zw{to{transform:translateX(calc(100vw + 120px))}}
+.gallery img.boop{animation:shk .3s 2}
+.gagbox .fakebtns{justify-content:center}
